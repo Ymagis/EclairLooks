@@ -1,0 +1,216 @@
+
+/*
+ * *******************************
+ * Default application look & feel
+ * *******************************
+*/
+
+* {
+    color: #d7d6d5;
+    background-color: #35322f;
+
+    /* Need both properties to disable focus rectangle style */
+    border: none;
+    outline: none;
+}
+
+QScrollArea {
+    border: 1px solid #1e1b18;
+}
+
+QAbstractButton {
+    border: 1px solid #1e1b18;
+    border-radius: 2px;
+}
+
+QTreeView {
+    border: 1px solid #1e1b18;
+}
+
+QLineEdit {
+    border: 1px solid #1e1b18;
+}
+
+QComboBox {
+    border: 1px solid #1e1b18;
+    padding: 1px;
+}
+
+/*
+ * *******************************
+ *         Tab Widget
+ * *******************************
+*/
+
+ /* The tab widget frame */
+QTabWidget::pane {
+    padding: 0px;
+}
+
+QTabWidget::tab-bar {
+    left: 0px;
+}
+
+QTabBar::close-button {
+    image: url(:/icons/close.png);
+    subcontrol-position: right;
+}
+
+QTabBar {
+    border: 1px solid #1e1b18;
+}
+
+QTabBar::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #5d5b59, stop: 0.4 #35322f,
+                                stop: 0.5 #35322f, stop: 1.0 #5d5b59);
+    border: 1px solid #1e1b18;
+    border-bottom-color: #1e1b18;
+    min-width: 4ex;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    color: #e0c31e;
+}
+
+QTabBar::tab:selected {
+    /* This mess up the text rendering */
+    /* font-weight: bold; */
+}
+
+
+/*
+ * *******************************
+ *         List Widget
+ * *******************************
+*/
+
+QListWidget {
+    show-decoration-selected: 0; /* make the selection span the entire width of the view */
+    /* border: 1px solid #1e1b18; */
+}
+
+QListWidget::item {
+    border: 1px solid #1e1b18;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 2px;
+}
+
+QListWidget::item:selected {
+    border: 1px solid #e0c31e;
+}
+
+QListWidget::item:selected:!active {
+    color: #e0c31e;
+}
+
+QListWidget::item:selected:active {
+    color: #e0c31e;
+}
+
+QListWidget::item:selected:focus {
+    border: 1px solid #89f442;
+}
+
+QListWidget::item:hover {
+    color: #e0c31e;
+}
+
+
+/*
+ * *******************************
+ *           QSlider
+ * *******************************
+*/
+
+QSlider::groove:horizontal {
+    border: 1px solid #333;
+    background: gray;
+    height: 6px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #555, stop: 1 #ddd);
+    border: 1px solid #777;
+    height: 6px;
+    border-radius: 4px;
+}
+
+QSlider::add-page:horizontal {
+    background: rgb(78, 78, 78);
+    border: 1px solid #777;
+    height: 6px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eee, stop:1 #ccc);
+    border: 1px solid #777;
+    width: 13px;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #fff, stop:1 #ddd);
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+    background: #bbb;
+    border-color: #999;
+}
+
+QSlider::add-page:horizontal:disabled {
+    background: #eee;
+    border-color: #999;
+}
+
+QSlider::handle:horizontal:disabled {
+    background: #eee;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+
+/*
+ * *******************************
+ *       Named Widget
+ * *******************************
+*/
+
+QWidget#scopeView {
+    border: 1px solid #1e1b18;
+}
+
+QListWidget#pipelineWidget {
+    border: 1px solid #1e1b18;
+}
+
+QListWidget#operatorListWidget {
+    border: 1px solid #1e1b18;
+}
+
+QStackedWidget#operatorDetailWidget {
+    border: 1px solid #1e1b18;
+}
+
+QWidget#lookSelectionWidget {
+    border: 1px solid #1e1b18;
+}
+
+QWidget#lookViewWidget {
+    border: 1px solid #1e1b18;
+}
+
+QTabWidget#lookViewWidget::pane {
+    border: 1px solid #1e1b18;
+}

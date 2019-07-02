@@ -1,0 +1,122 @@
+<h1>Eclair Looks Help !</h1>
+
+
+
+<h2>General</h2>
+
+<p>
+    <i>File menu</i>
+    <ul>
+        <li>Export - 3D LUT (.cube) generation from the current pipeline</li>
+    </ul>
+</p>
+
+<p>
+    <i>Global shortcuts</i>
+    <ul>
+        <li>Esc - exit application</li>
+    </ul>
+</p>
+
+<p>
+    <i>Image viewer shortcuts</i>
+    <ul>
+        <li>Double click or Backspace - reset view</li>
+        <li>Click - control slider before/after position</li>
+        <li>⌘ + Click - move image</li>
+        <li>Alt + click - center view on mouse position</li>
+    </ul>
+</p>
+
+
+
+<h2>Dev</h2>
+
+<p>
+    This view is composed of :
+    <ul>
+        <li>Image view : pipeline render</li>
+        <li>Pipeline : this is were you put operators that will define the look pipeline<br>
+            Accept drag and drop from the operator list or directly from files
+        </li>
+        <li>Operator list : available operators are shown here, you can drag and drop to the pipeline</li>
+        <li>Operator detail : when an operator is selected, a list of controls will appear, composed of both generic adjustement (global opacity, color, contrast, ...) and specifics ones related to the operator</li>
+        <li>Scope view : waveform, parade scope, values can go below or above 0..1</li>
+        <li>Look selection : <i>Work in progress...</i></li>
+    </ul>
+</p>
+
+<p>
+    Available operators :
+    <ul>
+        <li>CTL Transform - <i>Work in progress...</i></li>
+        <li>OCIO Colorspace - Require a .ocio configuration file, choose input / destination colorspace with optional look</li>
+        <li>OCIO File Transform - Require a LUT (all formats supported by OCIO)</li>
+        <li>OCIO Matrix - <i>Work in progress...</i></li>
+    </ul>
+</p>
+
+<p>
+    <i>Pipeline shortcuts</i>
+    <ul>
+        <li>D - enable / disable selected operator</li>
+        <li>Backspace - delete selected operator</li>
+    </ul>
+</p>
+
+<p>
+    <i>Scope shortcuts</i>
+    <ul>
+        <li>+, - - increase / decrease opacity</li>
+        <li>All image viewer shortcuts available (zoom, ...)</li>
+    </ul>
+</p>
+
+
+
+<h2>Look</h2>
+
+<p>
+    This view is composed of :
+    <ul>
+        <li>Look view : list of look in the current selected folder, can open multiple tabs</li>
+        <li>Look browser : show the content of the look folder (see. Setting)</li>
+        <li>Look search bar : filter through existing looks</li>
+        <li>Look detail : when a look is selected from the central or selection view, show image and curve preview</li>
+        <li>Look selection : drag and drop look from the central view here to make a selection<br>
+            Can clear / save / load selection to plain text files<br>
+            Selected looks will appear in comparison mode on the detail view<br>
+            Can deselect by clicking on empty space
+        </li>
+    </ul>
+</p>
+
+<p>
+    <i>Tab shortcuts</i>
+    <ul>
+        <li>Spacebar - switch full detail view on / off</li>
+        <li>↑, ↓ - navigate in the look view list</li>
+        <li>Shift + ↑, ↓ - navigate in the look selection list</li>
+    </ul>
+</p>
+
+<h2>Setting</h2>
+
+<p>
+    <i>General</i>
+    <ul>
+        <li>Default image - this image will be used for the Dev and Look tabs</li>
+        <li>Look Base Folder - folder where the looks are stored</li>
+        <li>Look Tonemap LUT - optional tonemapping LUT applied after individual looks in the Look tab</li>
+    </ul>
+</p>
+
+<h2>About</h2>
+
+<p>
+    <i>Informations</i> :
+    <ul>
+        <li>Beta version</li>
+        <li>MacOS 10.14 min</li>
+    </ul>
+</p>

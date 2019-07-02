@@ -1,0 +1,47 @@
+language: cpp
+os: osx
+osx_image: xcode10.2
+compiler: clang
+
+cache:
+  ccache: true
+  directories:
+  - "$HOME/Library/Caches/Homebrew"
+before_cache:
+- brew cleanup
+
+stages:
+- name: test
+  if: type IN (pull_request) OR tag IS present
+- name: deploy
+  if: tag IS present
+
+jobs:
+  include:
+  - stage: test
+    script:
+    - "./.travis/install-deps.sh"
+    - export PATH="/usr/local/opt/ccache/libexec:$PATH";
+    - mkdir build
+    - cd build
+    - cmake .. -DCMAKE_BUILD_TYPE=Debug
+    - cmake --build .
+    - ctest -V
+  - stage: deploy
+    script:
+    - "./.travis/install-deps.sh"
+    - export PATH="/usr/local/opt/ccache/libexec:$PATH";
+    - mkdir build
+    - cd build
+    - cmake .. -DCMAKE_BUILD_TYPE=Release
+    - cmake --build .
+    - cmake --build . --target package
+    deploy:
+      provider: releases
+      skip_cleanup: true
+      api_key:
+        secure: O1Ac0a3flXW/goZORRaRXNqeSn6sVZhRLV9rhS0tmVU1zaq4N/RrgT9TVcp8My+gMfdkgGfh7AcG2r1+IZqEu/lO+BP1Qz5p9i7Sr4YLu9MVSEwJxizoal4olkz2+SQs8zIQSyM/eFipk9kToaz6zeYQfTmtM/UVyfFb97c735PfaCsQxqfr5401zEHWW7T1SRT+pOtFndDELzOYp28ZHSIgOdB02L5hi/HvCqVvCeEjnyDCpLDUb1omeqCHvdT4WqPCG4e4M067oq5S8jSDAf7unj5R63sgh/F2u47ZrKPIstkQ5ifNQl3lIG1MiWFg9Q3mnSSZASVcJ19f0b6o9m0A8l4XOAQF6XRTIzlUsjepsXduNdLkjn9+02tu48hhl/Eu1vuIzrGs0HUZyw+Sa5MeK1Ak/olY2QF2SoV7xwoC4dwM+fZU3ID8nma/mpIHZSQ0ScO5d/fmp9r7kA4qILUtLwat2OQQEcLHQC15HdNetdEH4QiLJ6Qjp2YSUb2pGGonCSuQ0sSa8OyPPn+FmlE8qrsNCL/QBfio+opIgN8AG8gvVwlilXyCKnOvMgZwFdIrrxKa547WstNrOdVoCicy5uTLMumttnJQLiWkYwlWT8dFlRmjkKXyqhQDLWKqciUXFyDmH1qzZK9YPGQIB2dRXVBSfg7Pxi9W06myZqM=
+      file: src/ELook.dmg
+      on:
+        branch: master
+        tags: true

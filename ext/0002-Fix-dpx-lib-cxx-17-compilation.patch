@@ -1,0 +1,25 @@
+From c2eda9a90d0a8330fc6775b74d1d9ed71eebad6f Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?R=C3=A9mi=20Achard?= <remi.achard@ymagis.com>
+Date: Thu, 22 Nov 2018 17:40:38 +0100
+Subject: [PATCH 2/3] Fix dpx lib cxx 17 compilation
+
+---
+ lib/dpx/dpx.hh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/dpx/dpx.hh b/lib/dpx/dpx.hh
+index 02ae833..5639aaa 100644
+--- a/lib/dpx/dpx.hh
++++ b/lib/dpx/dpx.hh
+@@ -297,7 +297,7 @@ struct dpx {
+ 		compliance_e current_compliance;
+ 		endian_mode_e current_endian_mode;
+
+-		std::istream::streampos header_start;
++		std::streampos header_start;
+
+ 	public:
+ 		virtual ~dpx();
+--
+2.16.2
+

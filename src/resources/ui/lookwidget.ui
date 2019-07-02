@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LookWidget</class>
+ <widget class="QWidget" name="LookWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>929</width>
+    <height>601</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QSplitter" name="hSplitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="vLayout" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout2">
+       <property name="spacing">
+        <number>7</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QTabWidget" name="tabWidget">
+         <widget class="BrowserWidget" name="lookBrowserWidget">
+          <attribute name="title">
+           <string>Looks</string>
+          </attribute>
+         </widget>
+         <widget class="BrowserWidget" name="imageBrowserWidget">
+          <attribute name="title">
+           <string>Images</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="lookSettingWidget" native="true"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QSplitter" name="vSplitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSplitter" name="hSplitterView">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="LookViewTabWidget" name="lookViewWidget" native="true"/>
+       <widget class="LookSelectionWidget" name="lookSelectionWidget" native="true"/>
+      </widget>
+      <widget class="LookDetailWidget" name="lookDetailWidget" native="true"/>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LookDetailWidget</class>
+   <extends>QWidget</extends>
+   <header>lookdetailwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LookViewTabWidget</class>
+   <extends>QWidget</extends>
+   <header>lookviewwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BrowserWidget</class>
+   <extends>QWidget</extends>
+   <header>browserwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>LookSelectionWidget</class>
+   <extends>QWidget</extends>
+   <header>lookselectionwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

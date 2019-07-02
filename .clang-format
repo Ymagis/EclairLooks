@@ -1,0 +1,9 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+ColumnLimit: 90
+BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: false
+IndentCaseLabels: true
+AlignConsecutiveAssignments: true
+AlignTrailingComments: true
