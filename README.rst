@@ -44,6 +44,12 @@ a path prefix of `/usr/local/opt`), additional dependencies can be added to
 expand the range of formats supported by OpenImageIO. The CI pipeline can be
 used as a guide (Travis).
 
+Dependencies (macOS) :
+
+::
+
+    brew install cmake llvm qt
+
 Debug build :
 
 ::
@@ -61,7 +67,7 @@ Release build :
     cd build
     cmake -DCMAKE_BUILD_TYPE=Release ..
     make -j
-    make package
+    make bundle
 
 
 Installation

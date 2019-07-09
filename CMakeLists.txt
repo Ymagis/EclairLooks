@@ -57,7 +57,7 @@ add_subdirectory(src)
 # Packaging
 # -----------------------------------------------------------------------------
 
-add_custom_target(package
+add_custom_target(bundle
     COMMAND ${QT_PREFIX}/bin/macdeployqt src/ELook.app -dmg
     DEPENDS ${PROJECT_NAME}
 )

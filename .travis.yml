@@ -35,7 +35,7 @@ jobs:
     - cd build
     - cmake .. -DCMAKE_BUILD_TYPE=Release
     - cmake --build .
-    - cmake --build . --target package
+    - cmake --build . --target bundle
     deploy:
       provider: releases
       skip_cleanup: true
