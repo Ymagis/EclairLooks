@@ -36,19 +36,26 @@ Building
 --------
 
 The build uses CMake, most of the dependencies are downloaded and built as part
-of the process. The only requirements are a C++17 compliant compiler with the
-Filesystem library and Qt.
+of the process. The project require a C++17 compliant compiler, by default
+LLVM Clang is used.
 
-These are expected to be installed with Brew (with
+To speed-up the build process, ccache is supported.
+
+::
+
+    brew install ccache
+    export PATH=/usr/local/opt/ccache/libexec:$PATH
+
+The dependencies are expected to be installed with Brew (with
 a path prefix of `/usr/local/opt`), additional dependencies can be added to
 expand the range of formats supported by OpenImageIO. The CI pipeline can be
-used as a guide (Travis).
+used as a guide (Travis) in case of trouble.
 
 Dependencies (macOS) :
 
 ::
 
-    brew install cmake llvm qt
+    brew install cmake llvm qt boost libtiff ffmpeg libraw openjpeg
 
 Debug build :
 
