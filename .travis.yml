@@ -25,7 +25,7 @@ jobs:
     - mkdir build
     - cd build
     - cmake .. -DCMAKE_BUILD_TYPE=Debug
-    - cmake --build . -- -j
+    - cmake --build . -- -j2
     - ctest -V
   - stage: deploy
     script:
@@ -34,7 +34,7 @@ jobs:
     - mkdir build
     - cd build
     - cmake .. -DCMAKE_BUILD_TYPE=Release
-    - cmake --build . -- -j
+    - cmake --build . -- -j2
     - cmake --build . --target bundle
     deploy:
       provider: releases
